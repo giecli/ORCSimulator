@@ -17,9 +17,9 @@ nw.set_attr(p_unit='bar', T_unit='C', h_unit='kJ / kg')
 # input parameters (the mass flow rate of cooling air should be adjusted
 # based on the temperature of the geo-fluid for stable calculation)
 # geo-fluid part
-mass_flow_rate_brine = 275
-p_brine_in = 1.434
-T_brine_in = 59
+mass_flow_rate_brine = 190  # 7 EUBHE
+p_brine_in = 2
+T_brine_in = 58
 # T_reinjection = 35
 # cooling air part
 T_air = 9
@@ -103,7 +103,7 @@ evaporator_preheater.set_attr(T=T_brine_in - 5)
 
 # air cooling connections
 ca_in.set_attr(T=T_air, p=p_air, fluid={'water': 0, 'Isobutane': 0, 'Air': 1})
-ca_out.set_attr(T=T_air + 3)
+ca_out.set_attr(T=T_air + 5)
 
 # solving
 mode = 'design'
